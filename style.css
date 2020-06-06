@@ -39,3 +39,113 @@ h4 {
   margin: 0;
   text-transform: uppercase;
 }
+
+.inc-exp-container {
+  background-color: rgba(0, 0, 0, 0.12);
+  box-shadow: var(--box-shadow);
+  border-radius: 15px;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+}
+
+.inc-exp-container > div {
+  flex: 1;
+  text-align: center;
+}
+
+.inc-exp-container > div:first-of-type {
+  border-right: 2px solid black;
+}
+
+.money {
+  font-size: 20px;
+  letter-spacing: 1px;
+  margin: 5px 0;
+}
+
+.money.plus {
+  color: green;
+}
+
+.money.minus {
+  color: red;
+}
+
+label {
+  display: inline-block;
+  margin: 10px 0;
+}
+
+input [type="text"],
+input[type="number"] {
+  border: 1px solid gray;
+  border-radius: 5px;
+  display: block;
+  font-size: 18px;
+  padding: 10px;
+  width: 100%;
+}
+
+.btn {
+  cursor: pointer;
+  background-color: white;
+  box-shadow: var(--box-shadow);
+  color: black;
+  border: 0;
+  display: block;
+  font-size: 16px;
+  margin: 10px 0 30px;
+  padding: 10px;
+  width: 100%;
+}
+
+.btn:focus,
+.delete-btn:focus {
+  outline: 0;
+}
+
+.list {
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 40px;
+}
+
+.list li {
+  background-color: white;
+  box-shadow: var (var(--box-shadow));
+  color: gray;
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+.list li.plus {
+  border-right: 5px solid green;
+}
+
+.list li.minus {
+  border-right: 5px solid red;
+}
+
+.delete-btn {
+  cursor: pointer;
+  background-color: white;
+  font-size: 20px;
+  line-height: 20px;
+  padding: 2px 5px;
+  position: absolute;
+  border-radius: 5px;
+  top: 50%;
+  left: 0;
+  transform: translate(-100%, -50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.list li:hover .delete-btn {
+  opacity: 1;
+}
