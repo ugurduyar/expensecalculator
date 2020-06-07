@@ -32,7 +32,12 @@ function addTransaction(e) {
       text: text.value,
       amount: +amount.value,
     };
-    console.log(transaction);
+    transactions.push(transaction);
+    addTransactionDOM(transaction);
+    updateValues();
+    updateLocalStorage();
+    text.value = "";
+    amount.value = "";
   }
 }
 
@@ -85,10 +90,10 @@ function updateValues() {
   money_minus.innerText = `$${expense}`;
 }
 
-// Remove transaction
+// Remove transaction by id
 function removeTransaction(id) {
   transactions = transactions.filter((transaction) => transaction.id !== id);
-
+  updateLocalStorage();
   init();
 }
 
