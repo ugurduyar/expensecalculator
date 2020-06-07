@@ -80,6 +80,13 @@ function updateValues() {
   money_minus.innerText = `$${expense}`;
 }
 
+// Remove transaction
+function removeTransaction(id) {
+  transactions = transactions.filter((transaction) => transaction.id !== id);
+
+  init();
+}
+
 // Init app
 function init() {
   list.innerHTML = "";
