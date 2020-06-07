@@ -4,7 +4,7 @@ const money_minus = document.getElementById("money-minus");
 const list = document.getElementById("list");
 const form = document.getElementById("form");
 const text = document.getElementById("text");
-const amount = document.getElementById("amoun");
+const amount = document.getElementById("amount");
 
 const dummyTransactions = [
   { id: 1, text: "Flower", amount: -20 },
@@ -14,6 +14,27 @@ const dummyTransactions = [
 ];
 
 let transactions = dummyTransactions;
+
+// Add transaction
+function addTransaction(e) {
+  e.preventDefault();
+
+  if (text.value.trim() === "" || amount.value.trim() === "") {
+    alert("Please add a text and amount");
+  } else {
+    const transaction = {
+      id: generateID(),
+      text: text.value,
+      amount: +amount.value,
+    };
+    console.log(transaction);
+  }
+}
+
+// Generate random ID
+function generateID() {
+  return Math.floor(Math.random() * 100000000);
+}
 
 // Add transactions to DOM list
 
@@ -67,3 +88,5 @@ function init() {
 }
 
 init();
+
+form.addEventListener("submit", addTransaction);
